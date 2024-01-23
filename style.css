@@ -1,61 +1,25 @@
 :root {
-    /* Accent Colors */
-    --ac-color: #1c71d8;
-    --ac-bg-color: #3584e4;
-    --ac-fg-color: #ffffff;
+    --bg-color: #ffffff;
+    --bg-alt-color: #f0f0f0;
 
-    /* Destructive Colors */
-    --des-color: #c01c28;
-    --des-bg-color: #e01b24;
-    --des-fg-color: #ffffff;
+    --fg-color: #333333;
+    --fg-alt-color: #595959;
 
-    /* Success Colors */
-    --suc-color: #1b8553;
-    --suc-bg-color: #2ec27e;
-    --suc-fg-color: #ffffff;
-
-    /* Warning Colors */
-    --warn-color: #9c6e03;
-    --warn-bg-color: #e5a50a;
-    --warn-fg-color: #000000;
-
-    /* Window Colors */
-    --bg-color: #fafafa;
-    --fg-color: #000000;
-
-    /* Header Bar Colors */
-    --header-bg-color: #ffffff;
-    --header-fg-color: #000000;
+    --ac-color: #9850ea;
+    --success-color: #4caf50;
+    --err-color: #e53935;
 }
 
 .dark-theme {
-    /* Accent Colors */
-    --ac-color: #78aeed;
-    --ac-bg-color: #3584e4;
-    --ac-fg-color: #ffffff;
+    --bg-color: #121212;
+    --bg-alt-color: #1e1e1e;
 
-    /* Destructive Colors */
-    --des-color: #ff7b63;
-    --des-bg-color: #c01c28;
-    --des-fg-color: #ffffff;
+    --fg-color: #e0e0e0;
+    --fg-alt-color: #a0a0a0;
 
-    /* Success Colors */
-    --suc-color: #8ff0a4;
-    --suc-bg-color: #26a269;
-    --suc-fg-color: #ffffff;
-
-    /* Warning Colors */
-    --warn-color: #f8e45c;
-    --warn-bg-color: #cd9309;
-    --warn-fg-color: #000;
-
-    /* Window Colors */
-    --bg-color: #242424;
-    --fg-color: #ffffff;
-
-    /* Header Bar Colors */
-    --header-bg-color: #303030;
-    --header-fg-color: #ffffff;
+    --ac-color: #bb86fc;
+    --success-color: #1eb980;
+    --err-color: #cf6679;
 }
 
 body {
@@ -71,11 +35,11 @@ header {
     height: 60px;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
     position: relative; /* Added to position the logo */
 
-    background-color: var(--header-bg-color);
-    color: var(--header-fg-color);
+    background-color: var(--bg-color);
+    color: var(--fg-color);
 }
 
 .header-logo {
@@ -85,7 +49,7 @@ header {
 }
 
 .header-logo a {
-    color: var(--header-fg-color);
+    color: var(--fg-color);
     text-decoration: none;
 }
 
@@ -102,7 +66,7 @@ header {
 .hamburger-menu .bar {
     height: 3px;
     width: 100%;
-    background-color: var(--header-fg-color);
+    background-color: var(--fg-color);
 }
 
 .header-nav {
@@ -111,7 +75,6 @@ header {
     width: 100%;
     top: 60px;
     left: 0;
-    background-color: var(--header-bg-color);
 }
 
 .header-nav.transition {
@@ -128,14 +91,16 @@ header {
     padding: 10px 20px;
     margin: 0;
     border-bottom: none;
+    transition: background-color 0.3s ease;
 }
 
 .header-nav ul li:hover {
-    background-color: var(--ac-bg-color);
+    background-color: var(--ac-color);
+    color: var(--fg-alt-color);
 }
 
 .header-nav ul li a {
-    color: var(--header-fg-color);
+    color: var(--fg-color);
     text-decoration: none;
     display: block;
 }
@@ -179,7 +144,7 @@ header {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--ac-color);
 }
 
 input:focus + .slider {
