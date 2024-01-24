@@ -4,6 +4,7 @@
 :root {
     --bg-color: #ffffff;
     --bg-alt-color: #f0f0f0;
+    --bg-hover-color: #d0d0d0;
     --fg-color: #333333;
     --fg-alt-color: #595959;
     --ac-color: #9850ea;
@@ -14,6 +15,7 @@
 .dark-theme {
     --bg-color: #121212;
     --bg-alt-color: #1e1e1e;
+    --bg-hover-color: #3e3e3e;
     --fg-color: #e0e0e0;
     --fg-alt-color: #a0a0a0;
     --ac-color: #bb86fc;
@@ -61,7 +63,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 10px;
+    padding: 20px;
     width: 30px;
     height: 25px;
     background-color: transparent;
@@ -70,10 +72,15 @@ header {
     font-size: 30px;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 #site-menu:focus, #theme-toggle:focus {
     outline: none;
+}
+
+#site-menu:hover, #theme-toggle:hover {
+    background-color: var(--bg-hover-color);
 }
 
 .header-nav {
