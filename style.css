@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
+
 :root {
     --bg-color: #ffffff;
     --bg-alt-color: #f0f0f0;
-
     --fg-color: #333333;
     --fg-alt-color: #595959;
-
     --ac-color: #9850ea;
     --success-color: #4caf50;
     --err-color: #e53935;
@@ -13,10 +14,8 @@
 .dark-theme {
     --bg-color: #121212;
     --bg-alt-color: #1e1e1e;
-
     --fg-color: #e0e0e0;
     --fg-alt-color: #a0a0a0;
-
     --ac-color: #bb86fc;
     --success-color: #1eb980;
     --err-color: #cf6679;
@@ -24,8 +23,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-
+    font-family: 'Urbanist', Arial, Helvetica, sans-serif;
     background-color: var(--bg-color);
     color: var(--fg-color);
 }
@@ -36,9 +34,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    position: relative; /* Added to position the logo */
-
-    background-color: var(--bg-color);
+    position: relative;
+    background-color: var(--bg-alt-color);
     color: var(--fg-color);
 }
 
@@ -46,6 +43,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Climate Crisis', Arial, Helvetica, sans-serif;
 }
 
 .header-logo a {
@@ -53,7 +51,7 @@ header {
     text-decoration: none;
 }
 
-.hamburger-menu {
+#site-menu, #theme-toggle {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -61,12 +59,16 @@ header {
     padding: 10px;
     width: 30px;
     height: 25px;
+    background-color: transparent;
+    border: none;
+    color: var(--fg-color);
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
 }
 
-.hamburger-menu .bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--fg-color);
+#site-menu:focus, #theme-toggle:focus {
+    outline: none;
 }
 
 .header-nav {
@@ -75,10 +77,12 @@ header {
     width: 100%;
     top: 60px;
     left: 0;
+    background-color: var(--bg-alt-color);
+    font-weight: bold;
 }
 
-.header-nav.transition {
-    transition: all 0.5s ease;
+.header-nav.is-active {
+    display: block;
 }
 
 .header-nav ul {
@@ -105,63 +109,6 @@ header {
     display: block;
 }
 
-.theme-switch {
-    position: absolute;
-    right: 10px;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: var(--ac-color);
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+.about {
+    padding: 10px;
 }
