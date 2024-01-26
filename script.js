@@ -1,30 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.getElementById('site-menu');
-    const menu = document.querySelector('.header-nav');
-    const themeToggle = document.getElementById('theme-toggle');
+  const menuButton = document.getElementById('site-menu');
+  const menu = document.querySelector('.header-nav');
+  const themeToggle = document.getElementById('theme-toggle');
 
-    // Toggle the hamburger menu
-    const toggleMenu = () => {
-        menu.classList.toggle('is-active');
-    };
+  // Toggle the hamburger menu
+  const toggleMenu = () => {
+    menu.classList.toggle('is-active');
+    menuButton.textContent = menu.classList.contains('is-active') ? 'close' : 'menu';
+  };
 
-    menuButton.addEventListener('click', toggleMenu);
+  menuButton.addEventListener('click', toggleMenu);
 
-    // Update the theme and save to local storage
-    const updateTheme = () => {
-        const isDarkTheme = document.body.classList.toggle('dark-theme');
-        themeToggle.textContent = isDarkTheme ? 'sunny' : 'dark_mode';
-        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-    };
+  // Reverse the theme logic
+  const updateTheme = () => {
+    const isLightTheme = document.body.classList.toggle('light-theme');
+    themeToggle.textContent = isLightTheme ? 'dark_mode' : 'sunny';
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+  };
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', updateTheme);
-    }
+  themeToggle.addEventListener('click', updateTheme);
 
-    // Set the initial theme state from local storage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.toggle('dark-theme', savedTheme === 'dark');
-        themeToggle.textContent = savedTheme === 'dark' ? 'sunny' : 'dark_mode';
-    }
+  // Initialize the theme based on local storage or default to dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    themeToggle.textContent = 'dark_mode';
+  } else {
+    themeToggle.textContent = 'sunny';
+  }
 });

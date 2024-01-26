@@ -2,161 +2,171 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
 
 :root {
-    --bg-color: #ffffff;
-    --bg-alt-color: #f0f0f0;
-    --bg-hover-color: #d0d0d0;
-    --fg-color: #333333;
-    --fg-alt-color: #595959;
-    --ac-color: #9850ea;
-    --success-color: #4caf50;
-    --err-color: #e53935;
-}
-
-.dark-theme {
-    --bg-color: #121212;
-    --bg-alt-color: #1e1e1e;
-    --bg-hover-color: #3e3e3e;
-    --fg-color: #e0e0e0;
-    --fg-alt-color: #a0a0a0;
-    --ac-color: #bb86fc;
-    --success-color: #1eb980;
-    --err-color: #cf6679;
+  --bg-color-light: #fbf1c7;
+  --bg-alt-color-light: #ebdbb2;
+  --bg-hover-color-light: #a89984;
+  --fg-color-light: #3c3836;
+  --fg-alt-color-light: #7c6f64;
+  --ac-color-light: #458588;
+  --success-color-light: #98971a;
+  --err-color-light: #cc241d;
 }
 
 body {
-    margin: 0;
-    padding-top: 60px;
-    font-family: 'Urbanist', Arial, Helvetica, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--fg-color);
+  --bg-color: #282828;
+  --bg-alt-color: #3c3836;
+  --bg-hover-color: #7c6f64;
+  --fg-color: #ebdbb2;
+  --fg-alt-color: #a89984;
+  --ac-color: #83a598;
+  --success-color: #98971a;
+  --err-color: #cc241d;
+
+  margin: 0;
+  padding-top: 60px;
+  font-family: 'Urbanist', Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
 }
 
 header {
-    display: flex;
-    height: 60px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    position: fixed; /* Change from relative to fixed */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left of the viewport */
-    right: 0; /* Stretch across the full width of the viewport */
-    background-color: var(--bg-alt-color);
-    color: var(--fg-color);
-    z-index: 1000; /* Ensure the header is above other content */
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-alt-color);
+  color: var(--fg-color);
+  z-index: 1000;
 }
 
 .header-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Climate Crisis', Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Climate Crisis', Arial, Helvetica, sans-serif;
 }
 
 .header-logo a {
-    color: var(--fg-color);
-    text-decoration: none;
+  color: var(--fg-color);
+  text-decoration: none;
 }
 
 #site-menu, #theme-toggle {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px;
-    width: 30px;
-    height: 25px;
-    background-color: transparent;
-    border: none;
-    color: var(--fg-color);
-    font-size: 30px;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  width: 30px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  color: var(--fg-color);
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 #site-menu:focus, #theme-toggle:focus {
-    outline: none;
+  outline: none;
 }
 
 #site-menu:hover, #theme-toggle:hover {
-    background-color: var(--bg-hover-color);
+  background-color: var(--bg-hover-color);
 }
 
 .header-nav {
-    display: none;
-    position: absolute;
-    width: 100%;
-    top: 60px;
-    left: 0;
-    background-color: var(--bg-alt-color);
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  background-color: var(--bg-alt-color);
 
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .header-nav.is-active {
-    display: block;
+  display: block;
 }
 
 .header-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .header-nav ul li {
-    padding: 10px 20px;
-    margin: 0;
-    border-bottom: none;
-    transition: background-color 0.3s ease;
-}
-
-.header-nav ul li:hover {
-    background-color: var(--ac-color);
-    color: var(--fg-alt-color);
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: none;
+  transition: background-color 0.3s ease;
 }
 
 .header-nav ul li a {
-    color: var(--fg-color);
-    text-decoration: none;
-    display: block;
+  color: var(--fg-color);
+  text-decoration: none;
+  display: block;
+}
+
+.header-nav ul li a:hover {
+  color: var(--ac-color);
+  text-decoration: none;
+  display: block;
 }
 
 .about {
-    padding-top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-    font-size: 18px;
+  font-size: 18px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 926px) {
-    .header-nav ul li, .about {
-        font-size: 14px;
-    }
+  .header-nav ul li, .about {
+    font-size: 14px;
+  }
 
-    .header-nav ul li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .header-nav ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .header-logo {
-        white-space: nowrap; /* Prevent text from wrapping */
-        font-size: 10px; /* Adjust font size if necessary */
-        transform: translateX(-50%) translateY(-50%); /* Adjust for vertical centering */
-        top: 50%; /* Vertically center the logo */
-        left: 50%;
-        position: absolute;
-    }
+  .header-logo {
+    white-space: nowrap;
+    font-size: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
 
-    #site-menu, #theme-toggle {
-        font-size: 24px;
-    }
+  #site-menu, #theme-toggle {
+    font-size: 24px;
+  }
+}
+
+.light-theme {
+  --bg-color: var(--bg-color-light);
+  --bg-alt-color: var(--bg-alt-color-light);
+  --bg-hover-color: var(--bg-hover-color-light);
+  --fg-color: var(--fg-color-light);
+  --fg-alt-color: var(--fg-alt-color-light);
+  --ac-color: var(--ac-color-light);
+  --success-color: var(--success-color-light);
+  --err-color: var(--err-color-light);
 }
