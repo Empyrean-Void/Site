@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
+
+@font-face {
+  font-family: 'IntoneMono Nerd Font';
+  src: url('./fonts/IntoneMonoNerdFont-Regular.ttf') format('ttf');
+}
 
 :root {
   --bg-color-light: #fbf1c7;
@@ -24,7 +28,7 @@ body {
 
   margin: 0;
   padding-top: 60px;
-  font-family: 'Urbanist', Arial, Helvetica, sans-serif;
+  font-family: 'IntoneMono Nerd Font', Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
   color: var(--fg-color);
 }
